@@ -10,7 +10,7 @@ void setup() {
   tft.begin();
 
   Serial.print(F("Text                     "));
-  Serial.println(testText());
+  Serial.println(testText2());
   delay(3000);
 
   Serial.print(F("Rectangles (outline)     "));
@@ -21,6 +21,58 @@ void setup() {
   Serial.println(testRoundRects());
   delay(500);
   
+}
+
+unsigned long testText2() {
+  tft.setRotation(1);
+  tft.fillScreen(ILI9341_BLACK);
+  unsigned long start = micros();
+  tft.setCursor(0, 0);
+  tft.setTextColor(ILI9341_ORANGE); 
+  tft.setTextSize(1);
+  tft.print("Vip-Proto Association");
+  tft.setCursor(15, 50);
+  
+//  tft.setTextColor(ILI9341_RED);    
+//  tft.setTextSize(7);
+//  tft.println("105,00 db");
+
+    tft.setTextColor(0x010cb2);    
+  tft.setTextSize(6);
+  tft.print("105,00");
+  tft.setTextSize(4);
+  tft.println(" db\n\n");
+
+      tft.setTextColor(0x8bb201);    
+  tft.setTextSize(3);
+  tft.println("Volume controls +/-");
+
+//    tft.setTextColor(ILI9341_DARKGREEN);    
+//  tft.setTextSize(9);
+//  tft.println("105,00 db");
+
+
+    tft.fillScreen(ILI9341_BLACK);
+  tft.setCursor(0, 0);
+  tft.setTextColor(ILI9341_ORANGE); 
+  tft.setTextSize(1);
+  tft.print("Vip-Proto Association");
+  tft.setCursor(15, 50);
+  
+//  tft.setTextColor(ILI9341_RED);    
+//  tft.setTextSize(7);
+//  tft.println("105,00 db");
+
+    tft.setTextColor(0x010cb2);    
+  tft.setTextSize(6);
+  tft.print("109,00");
+  tft.setTextSize(4);
+  tft.println(" db\n\n");
+
+      tft.setTextColor(0x8bb201);    
+  tft.setTextSize(3);
+  tft.println("Volume controls +/-");
+  return micros() - start;
 }
 
 unsigned long testText() {
